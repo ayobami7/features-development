@@ -48,8 +48,8 @@ const Testimonials = () => {
                     ))}
                 </div>
                 <div className="flex justify-center items-center mx-auto text-white space-x-5 m-5">
-                    <button className="rounded-full w-10 h-10 bg-gray-700 flex items-center justify-center" onClick={clickPrev}><FaArrowLeft /></button>
-                    <button className="rounded-full w-10 h-10 bg-purple-700 flex items-center justify-center" onClick={clickNext}><FaArrowRight /></button>
+                    <button className="rounded-full w-10 h-10 bg-gray-700 hover:bg-purple-700 flex items-center justify-center" onClick={clickPrev}><FaArrowLeft /></button>
+                    <button className="rounded-full w-10 h-10 bg-gray-700 hover:bg-purple-700 flex items-center justify-center" onClick={clickNext}><FaArrowRight /></button>
                 </div>
             </div>
         </>
