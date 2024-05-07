@@ -1,5 +1,8 @@
 ![image](https://github.com/ayobami7/testimonial-component/assets/75611952/a19d4d2a-78bc-49af-86a6-2d964a3ef5b2)
 
+![image](https://github.com/ayobami7/testimonial-component/assets/75611952/ce91aeaa-22a4-493d-ad0c-d694eb3d6c5d)
+
+
 This is a simple React component that displays testimonials from clients in a carousel format. It allows users to navigate through the testimonials using arrow buttons.
 
 ## Getting Started
