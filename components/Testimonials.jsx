@@ -18,7 +18,7 @@ const Testimonials = () => {
     };
 
     const TestimonialCard = ({ testimonial }) => (
-        <div className="flex flex-col flex-wrap justify-between align-center w-80 h-[50vh] text-white bg-gray-800 my-4 mx-4 px-4 py-4 rounded-xl"> 
+        <div className="flex flex-col flex-wrap justify-between align-center w-80 md:h-[50vh] text-white bg-gray-800 my-4 mx-4 px-4 py-4 rounded-xl"> 
             <div>
                 <h4 className="text-white mb-4">{testimonial.title}</h4>
                 <p className="my-4">{testimonial.comment}</p>
@@ -36,8 +36,8 @@ const Testimonials = () => {
 
     return (
         <>
-            <div className="mx-auto items-center">
-                <div className="justify-center items-center text-center my-10">
+            <div className="mx-auto items-center bg-circle-gradient p-5 ">
+                <div className="justify-center items-center text-center my-10 text-purple-700">
                     <h1 className="my-4 font-semibold purple">WHAT THEY SAY</h1>
                     <h1 className="text-5xl font-semibold my-4 text-white">Our Clients Kind Words</h1>
                     <p className="text-gray-500 mx-auto w-96 text-wrap my-4">Here are some testimonials from our Clients after using our website to manage their business.</p>

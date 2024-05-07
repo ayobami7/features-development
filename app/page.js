@@ -1,10 +1,12 @@
 import Testimonials from "@/components/Testimonials";
-import Image from "next/image";
+import WalletPage from "@/components/WalletPage";
+
 
 export default function Home() {
   return (
     <>
       <Testimonials/>
+      <WalletPage/>
     </>
   );
 }
