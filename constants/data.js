@@ -26,7 +26,7 @@ export const columns = [
   ];
   
 
-  export const tableData = [
+  export const rows = [
     {
         invoice: "INV001",
         customerName: "John Doe",

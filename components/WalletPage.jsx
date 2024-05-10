@@ -1,13 +1,17 @@
-import { Input } from '@nextui-org/react';
+"use client";
+
+import { Input, Pagination } from '@nextui-org/react';
 import React from 'react'
 import { TfiWallet } from "react-icons/tfi";
 import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@nextui-org/react";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/react";
-import { columns, tableData } from '@/constants/data';
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
+import { columns, rows } from '@/constants/data';
 
 const WalletPage = () => {
+
+
   return (
     <>
        <div className="bg-white m-10 ">
@@ -23,7 +27,7 @@ const WalletPage = () => {
                     <button className="text-xs text-white px-3 rounded-md bg-blue-900" >Withdraw</button>
                 </div>
             </div>
-            <div className="flex flex-wrap md:flex-row justify-between p-5 gap-5 bg-slate-200 my-10 rounded-lg">
+            <div className="flex flex-wrap md:flex-row justify-between p-5 bg-slate-200 my-10 rounded-lg">
                 <Input startContent={<CiSearch />} type="search" placeholder="Search" className="max-w-xs" />
                 <div className="">
                     <Dropdown>
@@ -42,8 +46,29 @@ const WalletPage = () => {
                         </DropdownMenu>
                     </Dropdown>
                 </div>
-                <div>
-                </div>
+            </div>
+            <div>
+                <Table 
+                    aria-label="table with dynamic content" 
+                    selectionMode="multiple" 
+                    bottomContent={<div className="flex justify-center" >
+                        <Pagination showControls color="default"/>
+                    </div>}>
+                    <TableHeader columns={columns}>
+                        {columns.map((column) => (
+                            <TableColumn key={column.key}>{column.label}</TableColumn>
+                        ))}
+                    </TableHeader>
+                    <TableBody>
+                        {rows.map((item) => (
+                            <TableRow key={item.invoice}>
+                                {columns.map((column) => (
+                                    <TableCell key={column.key}>{item[column.key]}</TableCell>
+                                ))}
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
             </div>
        </div>
     </>
