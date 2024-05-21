@@ -40,7 +40,7 @@ const Testimonials = () => {
                 <div className="justify-center items-center text-center my-10 text-purple-700">
                     <h1 className="my-4 font-semibold purple">WHAT THEY SAY</h1>
                     <h1 className="text-5xl font-semibold my-4 text-white">Our Clients Kind Words</h1>
-                    <p className="text-gray-500 mx-auto w-96 text-wrap my-4">Here are some testimonials from our Clients after using our website to manage their business.</p>
+                    <p className="text-gray-500 mx-auto w-96 text-wrap my-4">Here are some testimonials from our Clients after using our website to manage their business. </p>
                 </div>
                 <div className="flex flex-wrap justify-center overflow-hidden">
                     {testimonials.slice(currentIndex, currentIndex + testimonialsPerPage).map((testimonial, index) => (

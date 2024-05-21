@@ -27,7 +27,7 @@ const WalletPage = () => {
                     <button className="text-xs text-white px-3 rounded-md bg-blue-900" >Withdraw</button>
                 </div>
             </div>
-            <div className="flex flex-wrap md:flex-row justify-between p-5 bg-slate-200 my-10 rounded-lg">
+            <div className="flex flex-wrap md:flex-row justify-between p-5 bg-slate-200 my-10 rounded-lg gap-3">
                 <Input startContent={<CiSearch />} type="search" placeholder="Search" className="max-w-xs" />
                 <div className="">
                     <Dropdown>

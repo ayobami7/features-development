@@ -84,3 +84,4 @@ export const columns = [
         amount: "150,500"
     }
 ];
+
