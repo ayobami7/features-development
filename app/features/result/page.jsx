@@ -4,6 +4,7 @@ import React from 'react'
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination} from "@nextui-org/react";
 import { columns, data } from '@/constants/resultData';
 import { GrDownload } from 'react-icons/gr';
+import DownloadFile from '@/components/fileDownload';
 
 const Result = () => {
   return (
@@ -37,7 +38,11 @@ const Result = () => {
                             <TableCell key={item.student_id}>{item.name}</TableCell>
                             <TableCell key={item.student_id}>
                             <div className="border-1 text-sm flex rounded-md p-1 max-w-fit cursor-pointer">
-                                Download <GrDownload className='mx-3' />
+                                <DownloadFile
+                                    apiUrl="http://localhost:8080/download/New-Assignment.txt"
+                                    fileName=""
+                                />
+                                <GrDownload className='mx-3' />
                             </div>
                             </TableCell>
                             <TableCell key={item.student_id}>
@@ -47,7 +52,7 @@ const Result = () => {
                                 </div>
                             </TableCell>
                             <TableCell key={item.student_id}>
-                                <div className='space-x-10 justify-center'>
+                                <div className='md:space-x-10 justify-center flex sm:text-sm md:flex-row'>
                                     <button className='border-1 text-blue-800 bg-gray-300 rounded-md py-1 px-2'>View file</button>
                                     <button className='border-1 text-blue-400 bg-slate-200 rounded-md py-1 px-2'>Save</button>
                                 </div>

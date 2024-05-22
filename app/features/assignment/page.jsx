@@ -5,8 +5,8 @@ import { IoMdTime } from "react-icons/io";
 import {  Modal,   ModalContent,   ModalHeader,   ModalBody, Button, ModalFooter} from "@nextui-org/modal";
 import { useState } from "react";
 import { Input } from "@nextui-org/react";
-import DownloadFile from "@/app/api/fileDownload";
-import UploadFile from "@/app/api/fileUpload";
+import DownloadFile from "@/components/fileDownload";
+import UploadFile from "@/components/fileUpload";
 import { submissions } from "@/constants/submissions";
 import { GrDownload } from "react-icons/gr";
 
@@ -95,7 +95,7 @@ const Assignment = () => {
                                                 <GrDownload className="mr-3" />
                                                 <DownloadFile
                                                     apiUrl="http://localhost:8080/download"
-                                                    fileName="New Asignment.pdf"
+                                                    fileName="New Asignment.txt"
                                                 />
                                             </div>
                                             <p className="my-10"><span className="font-semibold">Note: </span>Assignments should be submitted in PDF format, Github URL or Figma Links.</p>

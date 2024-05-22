@@ -25,7 +25,7 @@ const UploadFile = ({ apiUrl }) => {
         },
       });
 
-      alert('File uploaded successfully!');
+      alert(response.data.message);
       console.log(response.data);
     } catch (error) {
       console.error('Error uploading the file:', error);
@@ -33,10 +33,14 @@ const UploadFile = ({ apiUrl }) => {
   };
 
   return (
-    <form onSubmit={handleUpload}>
-      <input type="file" multiple placeholder="Upload Assignment" onChange={handleFileChange} />
-      {/* <button type="submit">Upload</button> */}
-    </form>
+    // <form onSubmit={handleUpload}>
+    //   <input type="file" multiple placeholder="Upload Assignment" onChange={handleFileChange} />
+    //   <button type="submit">Upload</button>
+    // </form>
+    <div>
+      <input type="file" onChange={handleFileChange} />
+      <button onClick={handleUpload}>Submit</button>
+    </div>
   );
 };
 

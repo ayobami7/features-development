@@ -1,0 +1,105 @@
+import React from "react";
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/react";
+
+const rows = [
+   {
+        invoice: "INV001",
+        customerName: "John Doe",
+        date: "May 7, 2024",
+        status: "Paid",
+        purchase: "Deposit",
+        amount: 10 // $10,000
+    },
+    {
+        invoice: "INV002",
+        customerName: "Jane Smith",
+        date: "May 8, 2024",
+        status: "Successful",
+        purchase: "Withdrawal",
+        amount: 7.5 // $75,000
+    },
+    {
+        invoice: "INV003",
+        customerName: "Michael Johnson",
+        date: "May 9, 2024",
+        status: "Paid",
+        purchase: "Deposit",
+        amount: 12.025 // $120,250
+    },
+    {
+        invoice: "INV004",
+        customerName: "Emily Davis",
+        date: "May 10, 2024",
+        status: "Successful",
+        purchase: "Withdrawal",
+        amount: 5.575 // $55,750
+    },
+    {
+        invoice: "INV005",
+        customerName: "David Wilson",
+        date: "May 11, 2024",
+        status: "Paid",
+        purchase: "Deposit",
+        amount: 20 // $200,000
+    },
+    {
+        invoice: "INV006",
+        customerName: "Emma Taylor",
+        date: "May 12, 2024",
+        status: "Successful",
+        purchase: "Withdrawal",
+        amount: 8.59 // $85,900
+    },
+    {
+        invoice: "INV007",
+        customerName: "Sophia Martinez",
+        date: "May 13, 2024",
+        status: "Paid",
+        purchase: "Deposit",
+        amount: 15.05 // $150,500
+    },
+];
+
+const columns = [
+  {
+    key: "invoice",
+    label: "Invoice",
+  },
+  {
+    key: "customerName",
+    label: "Customer Name",
+  },
+  {
+    key: "date",
+    label: "Date",
+  },
+  {
+    key: "status",
+    label: "Status",
+  },
+  {
+    key: "purchase",
+    label: "Purchase",
+  },
+  {
+    key: "amount",
+    label: "Amount",
+  },
+];
+
+export default function App() {
+  return (
+    <Table aria-label="Example table with dynamic content">
+      <TableHeader columns={columns}>
+        {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+      </TableHeader>
+      <TableBody items={rows}>
+        {(item) => (
+          <TableRow key={item.key}>
+            {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+          </TableRow>
+        )}
+      </TableBody>
+    </Table>
+  );
+}
