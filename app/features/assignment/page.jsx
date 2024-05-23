@@ -71,14 +71,14 @@ const Assignment = () => {
 
                          
                         <button onClick={openFirstModal} className="border-1 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white rounded-md p-2 my-5" >Open</button>
-                            <Modal isOpen={isFirstModalOpen}  onClose={closeFirstModal} size="4xl" className="h-full">
+                            <Modal isOpen={isFirstModalOpen}  onClose={closeFirstModal} size="4xl" className="">
                                 <ModalContent>
                                     <>
                                     <ModalHeader className="flex flex-col gap-1">
                                         <h1 className="text-2xl font-bold mb-10 ">Assignments</h1>
                                     </ModalHeader>
                                     <ModalBody>
-                                        <div className="flex flex-col border-2 rounded-md p-2">
+                                        <div className="flex flex-col border-2 rounded-md p-2 mb-5">
                                             <h1 className="text-2xl font-bold my-5">How to Make an Array and its types in C++</h1>
                                             <div className="text-sm text-gray-400 space-y-2">
                                                 <p>Course: Frontend Development</p>
@@ -106,13 +106,13 @@ const Assignment = () => {
                             </Modal>
 
                             <button onClick={openSecondModal} className="border-1 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white rounded-md p-2">Submit Assignments</button>
-                                <Modal isOpen={isSecondModalOpen} onClose={closeSecondModal} size="4xl" className="h-full">
+                                <Modal isOpen={isSecondModalOpen} onClose={closeSecondModal} size="4xl">
                                     <ModalContent>
                                         <ModalHeader className="flex flex-col gap-1">
                                             <h1 className="text-2xl font-bold mb-5 ">Assignments</h1>
                                         </ModalHeader>
                                         <ModalBody>
-                                            <div className="flex flex-col  border-1 rounded-md space-y-5 p-5">
+                                            <div className="flex flex-col  border-1 rounded-md space-y-5 p-5 mb-5">
                                                 <h1 className="text-2xl font-bold">How to Make an Array and its types in C++</h1>
                                                 <div className="text-sm text-gray-400 space-y-2">
                                                     <p>Course: Frontend Development</p>
