@@ -39,7 +39,7 @@ const UploadFile = ({ apiUrl }) => {
     // </form>
     <div>
       <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Submit</button>
+      {/* <button onClick={handleUpload}>Submit</button> */}
     </div>
   );
 };

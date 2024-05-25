@@ -1,7 +1,8 @@
 "use client"
 
 import React from 'react'
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination} from "@nextui-org/react";
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@/components/ui/table';
+import { Pagination } from '@/components/ui/pagination';
 import { columns, data } from '@/constants/resultData';
 import { GrDownload } from 'react-icons/gr';
 import DownloadFile from '@/components/fileDownload';

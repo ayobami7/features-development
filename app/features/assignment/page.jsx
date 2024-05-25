@@ -2,13 +2,16 @@
 
 import { BsCalendarDateFill } from "react-icons/bs";
 import { IoMdTime } from "react-icons/io";
-import {  Modal,   ModalContent,   ModalHeader,   ModalBody, Button, ModalFooter} from "@nextui-org/modal";
+// import {  Modal,   ModalContent,   ModalHeader,   ModalBody, Button, ModalFooter} from "@nextui-org/modal";
+import { Dialog, DialogOverlay, DialogContent, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
+
 import { useState } from "react";
-import { Input } from "@nextui-org/react";
+
 import DownloadFile from "@/components/fileDownload";
 import UploadFile from "@/components/fileUpload";
 import { submissions } from "@/constants/submissions";
 import { GrDownload } from "react-icons/gr";
+
 
 
 
@@ -69,18 +72,20 @@ const Assignment = () => {
                             <p>Marks: 50</p>
                         </div>
 
-                         
-                        <button onClick={openFirstModal} className="border-1 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white rounded-md p-2 my-5" >Open</button>
-                            <Modal isOpen={isFirstModalOpen}  onClose={closeFirstModal} size="4xl" className="">
-                                <ModalContent>
-                                    <>
-                                    <ModalHeader className="flex flex-col gap-1">
-                                        <h1 className="text-2xl font-bold mb-10 ">Assignments</h1>
-                                    </ModalHeader>
-                                    <ModalBody>
-                                        <div className="flex flex-col border-2 rounded-md p-2 mb-5">
-                                            <h1 className="text-2xl font-bold my-5">How to Make an Array and its types in C++</h1>
-                                            <div className="text-sm text-gray-400 space-y-2">
+                        
+
+                        {/* {isFirstModalOpen && ( */}
+                            <Dialog isOpen={isFirstModalOpen} onClose={closeFirstModal}>
+                                <DialogTrigger  className="border-1 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white rounded-md p-2 my-5">
+                                <button onClick={openFirstModal}>Open</button>
+                                </DialogTrigger>
+                                <DialogOverlay />
+                                <DialogContent className="bg-white p-6 rounded-md max-w-4xl mx-auto">
+                                    <DialogTitle className="text-2xl font-bold mb-10">Assignments</DialogTitle>
+                                        <DialogDescription>
+                                            <div className="flex flex-col border-2 rounded-md p-2 mb-5">
+                                                <h1 className="text-2xl font-bold my-5">How to Make an Array and its types in C++</h1>
+                                                <div className="text-sm text-gray-400 space-y-2">
                                                 <p>Course: Frontend Development</p>
                                                 <p>Created: Mon 20 May, 2024</p>
                                                 <div className="text-red-700 flex flex-row items-end">
@@ -90,76 +95,54 @@ const Assignment = () => {
                                                 </div>
                                                 <p>Questions: 50</p>
                                                 <p>Marks: 50</p>
-                                            </div>
-                                            <div className="border-1 p-2 text-sm flex rounded-md my-3 max-w-fit">
+                                                </div>
+                                                <div className="border-1 p-2 text-sm flex rounded-md my-3 max-w-fit">
                                                 <GrDownload className="mr-3" />
-                                                <DownloadFile
-                                                    apiUrl="http://localhost:8080/download"
-                                                    fileName="New Asignment.txt"
-                                                />
+                                                <DownloadFile apiUrl="http://localhost:8080/download" fileName="New Assignment.txt" />
+                                                </div>
+                                                <p className="my-10"><span className="font-semibold">Note: </span>Assignments should be submitted in PDF format, Github URL, or Figma Links.</p>
                                             </div>
-                                            <p className="my-10"><span className="font-semibold">Note: </span>Assignments should be submitted in PDF format, Github URL or Figma Links.</p>
-                                        </div>
-                                    </ModalBody>
-                                    </>
-                                </ModalContent>
-                            </Modal>
+                                        </DialogDescription>
+                                    {/* <button onClick={closeFirstModal} className="mt-4 p-2 bg-blue-700 text-white rounded-md">Close</button> */}
+                                </DialogContent>
+                            </Dialog>
+                        {/* )} */}
 
-                            <button onClick={openSecondModal} className="border-1 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white rounded-md p-2">Submit Assignments</button>
-                                <Modal isOpen={isSecondModalOpen} onClose={closeSecondModal} size="4xl">
-                                    <ModalContent>
-                                        <ModalHeader className="flex flex-col gap-1">
-                                            <h1 className="text-2xl font-bold mb-5 ">Assignments</h1>
-                                        </ModalHeader>
-                                        <ModalBody>
-                                            <div className="flex flex-col  border-1 rounded-md space-y-5 p-5 mb-5">
-                                                <h1 className="text-2xl font-bold">How to Make an Array and its types in C++</h1>
-                                                <div className="text-sm text-gray-400 space-y-2">
-                                                    <p>Course: Frontend Development</p>
-                                                    <p>Created: Mon 20 May, 2024</p>
-                                                    <div className="text-red-700 flex flex-row items-end">
-                                                        <p>Deadline: </p>
-                                                        <p className="flex flex-row px-4 items-center"><BsCalendarDateFill className="mr-1"/> 20-06-2024 </p>
-                                                        <p className="flex flex-row items-center"> <IoMdTime className="mr-1" /> 01:30pm</p>
-                                                    </div>
-                                                    <p>Questions: 50</p>
-                                                    <p>Marks: 50</p>
-                                                    <Input 
-                                                        type="url"
-                                                        placeholder="Figma Link"
-                                                        variant="bordered"
-                                                        className="max-w-xs"
-                                                    />
-                                                    <div className="flex flex-wrap md:flex-row items-center">
-                                                         <UploadFile apiUrl="http://localhost:8080/upload" /> 
-                                                    
-                                                            {/* <input
-                                                            className="visible text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer p-1 mr-5 max-w-xs"
-                                                            type="file"
-                                                            id="files"
-                                                            multiple
-                                                            placeholder="upload"
-                                                            >
-                                                            </input>  */}
-                                                        
-                                                        <Input
-                                                            type="url"
-                                                            placeholder="Github URL"
-                                                            variant="bordered"
-                                                            className="max-w-xs"
-                                                        />
-                                                    </div>
-                                                    
-                                                    {/* <ModalFooter className="justify-start -mx-7 w-90"> */}
-                                                        <button className="border-1 p-2 rounded-md w-90 bg-blue-700 text-white" type="submit" >
-                                                            Submit
-                                                        </button>
-                                                    {/* </ModalFooter> */}
+                        
+
+                        {/* {isSecondModalOpen && ( */}
+                            <Dialog isOpen={isSecondModalOpen} onDismiss={closeSecondModal}>
+                                <DialogTrigger className="border-1 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white rounded-md p-2">
+                                <button onClick={openSecondModal} >Submit Assignments</button>
+                                </DialogTrigger>
+                                <DialogOverlay />
+                                <DialogContent className="bg-white p-6 rounded-md max-w-4xl mx-auto">
+                                    <DialogTitle className="text-2xl font-bold mb-5">Assignments</DialogTitle>
+                                    <DialogDescription>
+                                        <div className="flex flex-col border-1 rounded-md space-y-5 p-5 mb-5">
+                                            <h1 className="text-2xl font-bold">How to Make an Array and its types in C++</h1>
+                                            <div className="text-sm text-gray-400 space-y-2">
+                                                <p>Course: Frontend Development</p>
+                                                <p>Created: Mon 20 May, 2024</p>
+                                                <div className="text-red-700 flex flex-row items-end">
+                                                <p>Deadline: </p>
+                                                <p className="flex flex-row px-4 items-center"><BsCalendarDateFill className="mr-1"/> 20-06-2024 </p>
+                                                <p className="flex flex-row items-center"> <IoMdTime className="mr-1" /> 01:30pm</p>
+                                                </div>
+                                                <p>Questions: 50</p>
+                                                <p>Marks: 50</p>
+                                                <input type="url" placeholder="Figma Link" className="border p-2 rounded-md max-w-xs" />
+                                                <div className="flex flex-wrap md:flex-row items-center">
+                                                <UploadFile apiUrl="http://localhost:8080/upload" />
+                                                <input type="url" placeholder="Github URL" className="border p-2 rounded-md max-w-xs ml-4" />
                                                 </div>
                                             </div>
-                                        </ModalBody>
-                                    </ModalContent>
-                                </Modal>
+                                        </div>
+                                    </DialogDescription>
+                                <button onClick={closeSecondModal} className="mt-4 p-2 bg-blue-700 text-white rounded-md">Submit</button>
+                                </DialogContent>
+                            </Dialog>
+                        {/* )} */}
 
                     </div>
 
