@@ -26,11 +26,11 @@ const Result = () => {
             bottomContent={<div className="flex justify-center" >
                 <Pagination showControls color="default"/>
                 </div>}>
-            <TableHeader columns={columns}>
+            <TableHead columns={columns}>
                 {columns.map((column) => (
                     <TableColumn key={column.uid}>{column.name}</TableColumn>
                 ))}
-            </TableHeader>
+            </TableHead>
             <TableBody>
                 {data.map((item, index) => (
                     <TableRow key={item.student_id}>

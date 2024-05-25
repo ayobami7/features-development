@@ -5,7 +5,7 @@ import { TfiWallet } from "react-icons/tfi";
 import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { columns, rows } from '@/constants/data';
-import { DropdownMenu, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@/components/ui/table';
 import { Input } from '@/components/ui/input';
 import { Pagination } from '@/components/ui/pagination';
@@ -42,10 +42,10 @@ const WalletPage = () => {
                   All <IoIosArrowDown />
                 </Button>
               </DropdownMenuTrigger >
-              <DropdownMenu>
+              <DropdownMenuContent>
                 <DropdownMenuItem>Paid</DropdownMenuItem>
                 <DropdownMenuItem>Successful</DropdownMenuItem>
-              </DropdownMenu>
+              </DropdownMenuContent>
             </DropdownMenu>
           </div>
         </div>
