@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@/components/ui/table';
+import { Table, TableBody, TableHeader, TableCell, TableHead, TableRow } from '@/components/ui/table';
 import { Pagination } from '@/components/ui/pagination';
 import { columns, data } from '@/constants/resultData';
 import { GrDownload } from 'react-icons/gr';
@@ -26,11 +26,11 @@ const Result = () => {
             bottomContent={<div className="flex justify-center" >
                 <Pagination showControls color="default"/>
                 </div>}>
-            <TableHead columns={columns}>
+            <TableHeader columns={columns}>
                 {columns.map((column) => (
-                    <TableColumn key={column.uid}>{column.name}</TableColumn>
+                    <TableHead key={column.uid}>{column.name}</TableHead>
                 ))}
-            </TableHead>
+            </TableHeader>
             <TableBody>
                 {data.map((item, index) => (
                     <TableRow key={item.student_id}>
