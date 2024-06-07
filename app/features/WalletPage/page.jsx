@@ -6,14 +6,10 @@ import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { columns, rows } from '@/constants/data';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@/components/ui/table';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Input } from '@/components/ui/input';
 import { Pagination } from '@/components/ui/pagination';
 import { Button } from '@/components/ui/button';
-
-// Import ShadCN components
-// import { Dialog, DialogOverlay, DialogContent, DialogTitle, DialogDescription } from '@components/ui/table';
-// import { Button, Input, Table, TableHead, TableRow, TableCell, TableBody, Pagination, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from '@components/ui/dropdown-menu';
 
 const WalletPage = () => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
@@ -38,7 +34,7 @@ const WalletPage = () => {
           <div className="">
             <DropdownMenu isOpen={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
               <DropdownMenuTrigger>
-                <Button className="flex justify-between bg-gray-100">
+                <Button className="flex justify-between bg-white text-gray-700">
                   All <IoIosArrowDown />
                 </Button>
               </DropdownMenuTrigger >
@@ -51,13 +47,13 @@ const WalletPage = () => {
         </div>
         <div>
           <Table>
-            <TableHead>
+            <TableHeader>
               <TableRow>
                 {columns.map((column) => (
-                  <TableCell key={column.key}>{column.label}</TableCell>
+                  <TableHead key={column.key}>{column.label}</TableHead>
                 ))}
               </TableRow>
-            </TableHead>
+            </TableHeader>
             <TableBody>
               {rows.map((item) => (
                 <TableRow key={item.invoice}>

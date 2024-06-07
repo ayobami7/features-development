@@ -6,3 +6,7 @@
   .bg-color{
     background-color: #0c0717;
   }
+
+  body {
+    font-family: Inter;
+  }
